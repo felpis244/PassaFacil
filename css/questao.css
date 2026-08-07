@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo-img {
+  width: 140px;
+  filter: brightness(0) invert(1);
+}
+
+body {
+  background-color: #1a0b3b;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-img {
+  width: 140px;
+  filter: brightness(0) invert(1);
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.vidas {
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+.progresso-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.barra-progresso {
+  width: 200px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barra-fill {
+  height: 100%;
+  background-color: #4c2a96;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  width: 10%;
+}
+
+#contador {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.questao-main {
+  max-width: 760px;
+  margin: 48px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.questao-caixa {
+  background-color: rgba(76, 42, 150, 0.15);
+  border: 1px solid rgba(175, 169, 236, 0.15);
+  border-radius: 18px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.questao-conteudo {
+  font-size: 12px;
+  color: #AFA9EC;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+#questao-imagem {
+  width: 100%;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.questao-enunciado {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.alternativas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.alternativa {
+  padding: 14px 18px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.alternativa:hover {
+  background-color: rgba(76, 42, 150, 0.3);
+  border-color: rgba(175, 169, 236, 0.3);
+}
+
+.alternativa.correta {
+  background-color: rgba(29, 158, 117, 0.2);
+  border-color: rgba(29, 158, 117, 0.5);
+  color: #9FE1CB;
+}
+
+.alternativa.errada {
+  background-color: rgba(226, 75, 74, 0.2);
+  border-color: rgba(226, 75, 74, 0.5);
+  color: #F09595;
+}
+
+.feedback-box {
+  background-color: rgba(76, 42, 150, 0.2);
+  border: 1px solid rgba(175, 169, 236, 0.2);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#feedback-texto {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  flex: 1;
+}
+
+#btn-proxima {
+  padding: 12px 24px;
+  background-color: #4c2a96;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+#btn-proxima:hover {
+  background-color: #5e35b1;
+}

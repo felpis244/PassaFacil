@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Perfil</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/perfil.css">
+</head>
+
+<body>
+
+  <header>
+        <nav>
+            <a href="dashboard.html" class="logo-link">
+                <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+            </a>
+        </nav>
+  </header>
+
+  <main class="dashboard-main">
+
+        <aside class="mlateral">
+            <div class="avatar grande" id="avatar-sidebar"></div>
+            <p class="mlateral-nome" id="nome-sidebar"></p>
+
+            <nav class="mlateral-nav">
+                <a href="dashboard.html" class="mlateral-link">🏠 <span>Início</span></a>
+                <a href="perfil.html" class="mlateral-link ativo">👤 <span>Perfil</span></a>
+                <a href="ranking.html" class="mlateral-link">🏆 <span>Ranking</span></a>
+                <a href="index.html" class="mlateral-link" id="logout-btn">
+                    🚪 <span>Sair</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="dashboard-conteudo">
+
+            <div class="perfil-topo">
+                <div class="perfil-avatar-grande" id="avatar-grande"></div>
+                <div>
+                    <h1 id="perfil-nome"></h1>
+                    <p id="perfil-email"></p>
+                </div>
+            </div>
+        
+      
+
+            <div class="perfil-stats">
+                <div class="resumo-card amarelo">
+                    <p>XP Total</p>
+                    <h2 id="perfil-xp"></h2>
+                </div>
+                <div class="resumo-card vermelho">
+                    <p>Vidas</p>
+                    <h2 id="perfil-vidas"></h2>
+                </div>
+                <div class="resumo-card verde">
+                    <p>Sequência</p>
+                    <h2 id="perfil-sequencia"></h2>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+  <script type="module" src="js/script-perfil.js"></script>
+
+</body>
+</html>

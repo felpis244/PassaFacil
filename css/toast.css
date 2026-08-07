@@ -1,0 +1,32 @@
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: rgba(76, 42, 150, 0.95);
+  border: 1px solid rgba(175, 169, 236, 0.3);
+  border-radius: 12px;
+  padding: 14px 20px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  animation: entrar 0.3s ease;
+  max-width: 320px;
+}
+
+.toast.sucesso { border-color: rgba(29, 158, 117, 0.5); }
+.toast.erro { border-color: rgba(255, 77, 106, 0.5); }
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sair {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(20px); }
+}

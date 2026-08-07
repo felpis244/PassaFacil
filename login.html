@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | PassaFácil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-login.css">
+  <link rel="stylesheet" href="css/toast.css">
+  <script src="js/toast.js"></script>
+</head>
+<body>
+    <header class="header-login">
+        <a href="index.html" class="logo-link">
+            <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+        </a>
+
+
+    </header>  
+
+  <div class="login-container">
+    <div class="login-box">
+      <img src="assets/img/passafacil-removebg-preview.png" alt="Logo" class="logo-form">
+      <h2 id="titulo">Bem-vindo de volta!</h2>
+      <p id="descricao">Acesse sua conta para continuar evoluindo.</p>
+
+      <form id="form-login">
+        <div class="input-group">
+          <label for="email" id="labelEmail">E-mail</label>
+          <input type="email" id="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="input-group">
+          <label for="senha" id="labelSenha">Senha</label>
+          <input type="password" id="senha" placeholder="••••••••" required>
+        </div>
+        <div>
+          <label class="lembrar-label">
+            <input type="checkbox" id="lembrar"> <span class="lembrar-text">Lembrar de mim</span>
+          </label>
+        </div>
+        <button type="submit" class="btn-login" id="entrar">Entrar</button>
+      </form>
+
+      <div class="separador">
+        <span>ou</span>
+      </div>
+
+      <button id="btn-google" class="btn-google">
+        <img src="https://www.google.com/favicon.ico" width="18"> Entrar com Google
+      </button>
+
+      <p class="footer-text" id="criarconta">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+  </div>
+  <script type="module" src="js/script-login.js"></script>
+</body>
+</html>

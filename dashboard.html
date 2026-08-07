@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<script type="module" src="js/script-dashboard.js"></script>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+      </a>
+      <div class="nav-stats">
+      </div>
+      <div class="avatar">SN</div>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+
+    <aside class="mlateral">
+      <div class="avatar grande">SN</div>
+      <p class="mlateral-nome">Seu Nome</p>
+
+      <nav class="mlateral-nav">
+        <a href="dashboard.html" class="mlateral-link ativo">
+          🏠 <span>Início</span>
+        </a>
+        <a href="perfil.html" class="mlateral-link">
+          👤 <span>Perfil</span>
+        </a>
+        <a href="ranking.html" class="mlateral-link">
+          🏆 <span>Ranking</span>
+        </a>
+        <a href="#" class="mlateral-link" id="logout-btn" >
+          🚪<span>Sair</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="dashboard-conteudo">
+
+      <!-- CARDS DE RESUMO -->
+      <section class="resumo">
+        <div class="resumo-card amarelo">
+          <p>XP Total</p>
+          <h2>0</h2>
+        </div>
+        <div class="resumo-card vermelho">
+          <p>Vidas</p>
+          <h2>5</h2>
+        </div>
+        <div class="resumo-card verde">
+          <p>Sequência</p>
+          <h2>0 dias</h2>
+        </div>
+        <div class="resumo-card roxo">
+          <p>Ranking</p>
+          <h2>#4</h2>
+        </div>
+      </section>
+
+      <!-- MAPA HORIZONTAL -->
+      <section class="mapa">
+        <div class="mapa-titulo">
+          <div>
+            <p class="modulo-label">Módulo 1</p>
+            <h2>Interpretação de Texto</h2>
+          </div>
+          <span class="mapa-progresso">2 de 5 concluídas</span>
+        </div>
+
+        <div class="caminho">
+          <div class="licao concluida">
+            <div class="licao-btn">✓</div>
+            <span>Ideia principal</span>
+          </div>
+          <div class="linha concluida"></div>
+          <div class="licao concluida">
+            <div class="licao-btn">✓</div>
+            <span>Inferência</span>
+          </div>
+          <div class="linha"></div>
+          <div class="licao ativa">
+            <div class="licao-btn">★</div>
+            <span>Coesão textual</span>
+          </div>
+          <div class="linha"></div>
+          <div class="licao bloqueada">
+            <div class="licao-btn">🔒</div>
+            <span>Intertextualidade</span>
+          </div>
+          <div class="linha"></div>
+          <div class="licao bloqueada">
+            <div class="licao-btn">🔒</div>
+            <span>Tipos de texto</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARDS INFERIORES -->
+      <section class="info-cards">
+        <div class="info-card">
+          <p class="info-label">escolha o que deja aprender</p>
+          <h3>Comece ja!!</h3>
+          <p class="info-sub"></p>
+          <a href="selecao.html" class="btn-comecar">Começar</a>
+        </div>
+        <div class="info-card">
+          <p class="info-label">Melhor matéria</p>
+          <h3>Interpretação</h3>
+          <p class="info-sub verde-texto">85% de acerto</p>
+        </div>
+        <div class="info-card">
+          <p class="info-label">Dúvidas?</p>
+          <h3>Fale com nossa IA</h3>
+          <p class="info-sub">Tire suas dúvidas de português na hora</p>
+          <a href="chatbot.html" class="btn-comecar">Conversar</a>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

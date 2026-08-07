@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Questão</title>
+  <link rel="stylesheet" href="css/questao.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="dashboard.html" class="logo-link">
+      <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+    </a>
+    <div class="header-info">
+      <div class="vidas">
+        <span id="coracoes">❤️❤️❤️❤️❤️</span>
+      </div>
+        <span id="contador">1/10</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="questao-main">
+
+    <div class="questao-caixa">
+
+      <p class="questao-conteudo" id="questao-conteudo"></p>
+
+      <img id="questao-imagem" src="" alt="Imagem da questão" style="display:none;">
+
+      <h2 class="questao-enunciado" id="questao-enunciado"></h2>
+
+      <div class="alternativas" id="alternativas">
+        <button class="alternativa" id="alt-a"></button>
+        <button class="alternativa" id="alt-b"></button>
+        <button class="alternativa" id="alt-c"></button>
+        <button class="alternativa" id="alt-d"></button>
+      </div>
+
+    </div>
+
+    <div class="feedback-box" id="feedback-box" style="display:none;">
+      <p id="feedback-texto"></p>
+      <button id="btn-proxima">Próxima →</button>
+    </div>
+
+  </main>
+
+  <script type="module" src="js/script-questao.js"></script>
+
+</body>
+</html>

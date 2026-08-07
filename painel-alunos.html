@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Alunos</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/painel.css">
+  <link rel="stylesheet" href="css/ranking.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="painel.html" class="logo-link">
+                <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+            </a>
+            <span class="professor-badge">👨‍🏫 Painel do Professor</span>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+
+        <aside class="mlateral">
+            <div class="avatar grande" id="avatar-mlateral"></div>
+            <p class="mlateral-nome" id="nome-mlateral"></p>
+            <p class="professor-tag">Professor</p>
+
+            <nav class="mlateral-nav">
+                <a href="painel.html" class="mlateral-link">📊 <span>Visão geral</span></a>
+                <a href="painel-alunos.html" class="mlateral-link ativo">👥 <span>Alunos</span></a>
+                <a href="painel-questoes.html" class="mlateral-link">📝 <span>Questões</span></a>
+            </nav>
+        </aside>
+
+        <div class="dashboard-conteudo">
+
+            <div class="ranking-topo">
+                <h1>👥 Alunos</h1>
+                <p id="total-alunos">Carregando...</p>
+            </div>
+
+            <div class="ranking-lista" id="alunos-lista"></div>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="js/script-painel-alunos.js"></script>
+
+</body>
+</html>

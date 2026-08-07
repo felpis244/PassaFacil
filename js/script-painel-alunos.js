@@ -1,0 +1,62 @@
+
+// Importa a conexão com o Supabase
+import { supabase } from "./supabase.js";
+
+// Verifica se o usuário está logado e é professor
+const { data } = await supabase.auth.getSession();
+if (!data.session) {
+  window.location.href = "login.html";
+}
+
+const userId = data.session.user.id;
+
+// Verifica se é professor
+const { data: professor } = await supabase
+  .from("perfis")
+  .select("nome, role")
+  .eq("id", userId)
+  .single();
+
+if (professor.role !== "professor") {
+  window.location.href = "dashboard.html";
+}
+
+// Atualiza o menu lateral
+const iniciais = professor.nome.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
+document.getElementById("avatar-mlateral").textContent = iniciais;
+document.getElementById("nome-mlateral").textContent = professor.nome;
+
+// Busca todos os alunos
+const { data: alunos } = await supabase
+  .from("perfis")
+  .select("nome, xp, vidas, sequencia, criado_em")
+  .eq("role", "aluno")
+  .order("xp", { ascending: false });
+
+// Atualiza o total
+document.getElementById("total-alunos").textContent = alunos.length + " alunos cadastrados";
+
+// Monta a lista
+const lista = document.getElementById("alunos-lista");
+
+if (alunos.length === 0) {
+  lista.innerHTML = '<p style="padding:24px;color:rgba(255,255,255,0.4);">Nenhum aluno cadastrado ainda.</p>';
+} else {
+  alunos.forEach((aluno, index) => {
+    const iniciais = aluno.nome.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
+    const data = new Date(aluno.criado_em).toLocaleDateString("pt-BR");
+
+    const item = document.createElement("div");
+    item.classList.add("ranking-item");
+    item.innerHTML = `
+      <span class="ranking-posicao">${index + 1}</span>
+      <div class="ranking-avatar">${iniciais}</div>
+      <span class="ranking-nome">${aluno.nome}</span>
+      <span style="font-size:13px;color:rgba(255,255,255,0.4);flex:1;text-align:center;">Desde ${data}</span>
+      <span style="font-size:13px;color:#1D9E75;margin-right:16px;">🔥 ${aluno.sequencia} dias</span>
+      <span class="ranking-xp">${aluno.xp} XP</span>
+    `;
+
+    lista.appendChild(item);
+  });
+}

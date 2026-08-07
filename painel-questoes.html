@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Questões</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/painel.css">
+  <link rel="stylesheet" href="css/ranking.css">
+  <link rel="stylesheet" href="css/painel-questoes.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="painel.html" class="logo-link">
+                <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+            </a>
+            <span class="professor-badge">👨‍🏫 Painel do Professor</span>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+
+        <aside class="mlateral">
+            <div class="avatar grande" id="avatar-mlateral"></div>
+            <p class="mlateral-nome" id="nome-mlateral"></p>
+            <p class="professor-tag">Professor</p>
+
+            <nav class="mlateral-nav">
+                <a href="painel.html" class="mlateral-link">📊 <span>Visão geral</span></a>
+                <a href="painel-alunos.html" class="mlateral-link">👥 <span>Alunos</span></a>
+                <a href="painel-questoes.html" class="mlateral-link ativo">📝 <span>Questões</span></a>
+            </nav>
+        </aside>
+
+        <div class="dashboard-conteudo">
+
+            <div class="ranking-topo">
+                <h1>📝 Questões</h1>
+                <p id="total-questoes">Carregando...</p>
+            </div>
+
+            <div class="questao-form">
+                <h2>Adicionar nova questão</h2>
+
+                <div class="form-group">
+                    <label>Matéria</label>
+                    <select id="form-materia">
+                        <option value="Interpretação de Texto">Interpretação de Texto</option>
+                        <option value="Gramática">Gramática</option>
+                        <option value="Literatura">Literatura</option>
+                        <option value="Redação">Redação</option>
+                        <option value="Figuras de Linguagem">Figuras de Linguagem</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Conteúdo</label>
+                    <input type="text" id="form-conteudo" placeholder="Ex: Concordância verbal">
+                </div>
+
+                <div class="form-group">
+                    <label>Enunciado</label>
+                    <textarea id="form-enunciado" placeholder="Digite a pergunta..."></textarea>
+                </div>
+            
+
+                <div class="form-group">
+                    <label>Alternativa A</label>
+                    <input type="text" id="form-alt-a" placeholder="Alternativa A">
+                </div>
+
+                <div class="form-group">
+                    <label>Alternativa B</label>
+                    <input type="text" id="form-alt-b" placeholder="Alternativa B">
+                </div>
+
+                <div class="form-group">
+                    <label>Alternativa C</label>
+                    <input type="text" id="form-alt-c" placeholder="Alternativa C">
+                </div>
+
+                <div class="form-group">
+                    <label>Alternativa D</label>
+                    <input type="text" id="form-alt-d" placeholder="Alternativa D">
+                </div>
+            
+
+                <div class="form-group">
+                    <label>Resposta correta</label>
+                    <select id="form-resposta">
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="d">D</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Explicação</label>
+                    <textarea id="form-explicacao" placeholder="Explique o porquê da resposta correta..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Dificuldade</label>
+                    <select id="form-dificuldade">
+                        <option value="facil">Fácil</option>
+                        <option value="intermediario" selected>Intermediário</option>
+                        <option value="dificil">Difícil</option>
+                    </select>
+                </div>
+
+                <button id="btn-adicionar" class="btn-comecar">Adicionar questão</button>
+            </div>
+
+            <div class="ranking-lista" id="questoes-lista"></div>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="js/script-painel-questoes.js"></script>
+
+</body>
+</html>

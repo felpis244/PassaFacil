@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Painel do Professor</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/painel.css">
+</head>
+
+<body>
+
+  <header>
+        <nav>
+            <a href="index.html" class="logo-link">
+                <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+            </a>
+            <span class="professor-badge">👨‍🏫 Painel do Professor</span>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+
+        <aside class="mlateral">
+            <div class="avatar grande" id="avatar-mlateral"></div>
+            <p class="mlateral-nome" id="nome-mlateral"></p>
+            <p class="professor-tag">Professor</p>
+
+            <nav class="mlateral-nav">
+                <a href="painel.html" class="mlateral-link ativo">📊 <span>Visão geral</span></a>
+                <a href="painel-alunos.html" class="mlateral-link">👥 <span>Alunos</span></a>
+                <a href="painel-questoes.html" class="mlateral-link">📝 <span>Questões</span></a>
+            </nav>
+        </aside>
+
+        <div class="dashboard-conteudo">
+
+            <!-- CARDS DE RESUMO -->
+            <section class="resumo">
+                <div class="resumo-card roxo">
+                    <p>Total de alunos</p>
+                    <h2 id="total-alunos">0</h2>
+                </div>
+                <div class="resumo-card amarelo">
+                    <p>Questões no banco</p>
+                    <h2 id="total-questoes">0</h2>
+                </div>
+                <div class="resumo-card verde">
+                    <p>Respostas dadas</p>
+                    <h2 id="total-respostas">0</h2>
+                </div>
+                <div class="resumo-card vermelho">
+                    <p>Taxa de erro geral</p>
+                    <h2 id="taxa-erro">0%</h2>
+                </div>
+            </section>
+
+            <!-- GRÁFICO POR MATÉRIA -->
+            <section class="grafico-secao">
+                <h2>Erros por matéria</h2>
+                <div id="grafico-materias"></div>
+            </section>
+
+            <!-- TOP ALUNOS -->
+            <section class="top-alunos">
+                <h2>Top alunos por XP</h2>
+                <div id="top-alunos-lista"></div>
+            </section>
+
+        </div>
+
+    
+
+    </main>
+
+    <script type="module" src="js/script-painel.js"></script>
+
+</body>
+</html>

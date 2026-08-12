@@ -1,16 +1,15 @@
-
 // Importa a conexão com o Supabase
 import { supabase } from "./supabase.js";
 
 // Verifica se o usuário está logado
 const { data } = await supabase.auth.getSession();
 
-// Se você estive sem login volta pra tela de logar  
+// Se não tiver login volta pra tela de logar
 if (!data.session) {
   window.location.href = "login.html";
 }
 
-// Pega o id da pessoa que fez o login para buscar o perfil dentro do banco 
+// Pega o id da pessoa que fez o login
 const userId = data.session.user.id;
 
 // Busca o perfil do usuário na tabela perfis
@@ -20,28 +19,27 @@ const { data: perfil } = await supabase
   .eq("id", userId)
   .single();
 
-// Atualiza o nome na a dashboard com o xp a vida e saquencia que a pessoa tava antes de sair do site 
-document.querySelectorAll(".mlateral-nome").forEach(el => {
-  el.textContent = perfil.nome;
-});
-
-// Atualiza os avatares com as iniciais
+// Atualiza as iniciais nos avatares
 const iniciais = perfil.nome.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
 document.querySelectorAll(".avatar").forEach(el => {
   el.textContent = iniciais;
 });
 
+// Atualiza o nome
+const nomeEl = document.getElementById("nome-usuario");
+if (nomeEl) nomeEl.textContent = perfil.nome.split(" ")[0];
+
 // Atualiza XP
-document.querySelector(".resumo-card.amarelo h2").textContent = perfil.xp;
+const statXp = document.getElementById("stat-xp");
+if (statXp) statXp.textContent = perfil.xp;
 
 // Atualiza Vidas
-document.querySelector(".resumo-card.vermelho h2").textContent = perfil.vidas;
+const statVidas = document.getElementById("stat-vidas");
+if (statVidas) statVidas.textContent = perfil.vidas;
 
 // Atualiza Sequência
-document.querySelector(".resumo-card.verde h2").textContent = perfil.sequencia + " dias";
-
-// ignorar esse ultimo removi do site 
-document.querySelector(".xp-valor") && (document.querySelector(".xp-valor").textContent = perfil.xp + " XP");
+const statSeq = document.getElementById("stat-sequencia");
+if (statSeq) statSeq.textContent = perfil.sequencia + " dias";
 
 // Busca o histórico de respostas do usuário
 const { data: respostas } = await supabase
@@ -50,7 +48,7 @@ const { data: respostas } = await supabase
   .eq("usuario_id", userId);
 
 if (respostas && respostas.length > 0) {
-  // Agrupa por matéria
+  // Junta por matéria
   const materias = {};
   respostas.forEach(r => {
     if (!materias[r.materia]) {
@@ -71,9 +69,11 @@ if (respostas && respostas.length > 0) {
     }
   });
 
-  // Atualiza o card
-  document.querySelector(".info-cards .info-card:nth-child(2) h3").textContent = melhorMateria || "Nenhuma ainda";
-  document.querySelector(".info-cards .info-card:nth-child(2) .info-sub").textContent = melhorTaxa + "% de acerto";
+  // Atualiza o card de melhor matéria
+  const melhorEl = document.getElementById("melhor-materia");
+  const taxaEl = document.getElementById("melhor-taxa");
+  if (melhorEl) melhorEl.textContent = melhorMateria || "Nenhuma ainda";
+  if (taxaEl) taxaEl.textContent = melhorTaxa + "% de acerto";
 }
 
 // Busca todos os perfis ordenados por XP pra calcular posição
@@ -86,10 +86,43 @@ const { data: todosPerfis } = await supabase
 const minhaPosicao = todosPerfis.findIndex(p => p.id === userId) + 1;
 
 // Atualiza o card de ranking
-document.querySelector(".resumo-card.roxo h2").textContent = "#" + minhaPosicao;
+const statRanking = document.getElementById("stat-ranking");
+if (statRanking) statRanking.textContent = "#" + minhaPosicao;
 
-//logout 
-document.getElementById("logout-btn").addEventListener("click", async () => {
-  await supabase.auth.signOut();
-  window.location.href = "login.html";
-});
+// Atualiza o texto do ranking no acesso rápido
+const rapidoRanking = document.getElementById("rapido-ranking");
+if (rapidoRanking) rapidoRanking.textContent = "Você está em #" + minhaPosicao;
+
+// Logout
+const btnLogout = document.getElementById("btn-logout");
+if (btnLogout) {
+  btnLogout.addEventListener("click", async () => {
+    await supabase.auth.signOut();
+    window.location.href = "index.html";
+  });
+}
+
+// Menu hamburguer
+const btnMenu = document.getElementById("menu-hamburguer");
+const menuMobile = document.getElementById("menu-mobile");
+const menuOverlay = document.getElementById("menu-overlay");
+const btnLogoutMobile = document.getElementById("btn-logout-mobile");
+
+if (btnMenu) {
+  btnMenu.addEventListener("click", () => {
+    menuMobile.classList.toggle("aberto");
+  });
+}
+
+if (menuOverlay) {
+  menuOverlay.addEventListener("click", () => {
+    menuMobile.classList.remove("aberto");
+  });
+}
+
+if (btnLogoutMobile) {
+  btnLogoutMobile.addEventListener("click", async () => {
+    await supabase.auth.signOut();
+    window.location.href = "index.html";
+  });
+}

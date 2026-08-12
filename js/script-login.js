@@ -30,7 +30,7 @@ form.addEventListener("submit", async (e) => {
 
   // Se der erro, mostra a mensagem e para
     if (error) {
-        alert("Erro ao entrar:\n" + error.message);
+        mostrarToast("Erro ao entrar:\n" + error.message);
         return;
     }
 
@@ -97,6 +97,6 @@ document.getElementById("btn-google").addEventListener("click", async () => {
   });
 
   if (error) {
-    alert("Erro ao entrar com Google: " + error.message);
+    mostrarToast("Erro ao entrar com Google: " + error.message);
   }
 });

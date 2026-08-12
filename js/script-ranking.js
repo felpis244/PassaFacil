@@ -20,7 +20,7 @@ const { data: meuPerfil } = await supabase
 // Atualiza a sidebar
 const iniciais = meuPerfil.nome.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
 document.getElementById("avatar-mlateral").textContent = iniciais;
-document.getElementById("nome-mlateral").textContent = meuPerfil.nome;
+
 
 // Busca todos os perfis fazendo ranking por XP
 const { data: perfis } = await supabase

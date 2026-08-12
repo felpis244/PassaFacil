@@ -19,7 +19,7 @@ form.addEventListener('submit', async (e) => {
 })
 // mensagens de erro se o cadastro der errado 
 if (error) {
-  alert(' Erro ao cadastrar a conta:' + error.message)
+  mostrarToast(' Erro ao cadastrar a conta:' + error.message)
   return
 }
 
@@ -28,11 +28,11 @@ if (error) {
     .insert({ id: data.user.id, nome: nome })
 
   if (erroP) {
-    alert('Erro ao salvar perfil: ' + erroP.message)
+    mostrarToast('Erro ao salvar perfil: ' + erroP.message)
     return
   }
   // se der tudo certo aparece essa mensagem e vai pra tela principal
-  alert('Cadastro realizado com sucesso!')
+  mostrarToast("Cadastro realizado com sucesso! Bem-vindo ao PassaFácil! 🎓");
   window.location.href = 'dashboard.html'
 })
 
@@ -46,6 +46,6 @@ document.getElementById("btn-google").addEventListener("click", async () => {
   });
 
   if (error) {
-    alert("Erro ao cadastrar com Google: " + error.message);
+    mostrarToast("Erro ao cadastrar com Google: " + error.message);
   }
 });

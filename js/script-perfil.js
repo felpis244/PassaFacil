@@ -24,7 +24,7 @@ const iniciais = perfil.nome.split(" ").map(n => n[0]).join("").toUpperCase().sl
 // Atualiza o topo
 document.getElementById("avatar-grande").textContent = iniciais;
 document.getElementById("avatar-sidebar").textContent = iniciais;
-document.getElementById("nome-sidebar").textContent = perfil.nome;
+
 document.getElementById("perfil-nome").textContent = perfil.nome;
 document.getElementById("perfil-email").textContent = email;
 document.getElementById("perfil-xp").textContent = perfil.xp;

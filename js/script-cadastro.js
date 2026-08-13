@@ -20,7 +20,6 @@ form.addEventListener('submit', async (e) => {
 // mensagens de erro se o cadastro der errado 
 if (error) {
   mostrarToast(' Erro ao cadastrar a conta:' + error.message)
-  return
 }
 
   const { error: erroP } = await supabase

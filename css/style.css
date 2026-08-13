@@ -6,14 +6,16 @@
 
 /* corpo dio site */
 body {
-  background-color: #1a0b3b;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0b3b 50%, #0d0d0d 100%);
+  background-attachment: fixed;
   color: #ffffff;
   font-family: Arial, sans-serif;
 }
 
 /* parte de cima */
 header {
-  background-color: #1a0b3b;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0b3b 50%, #0d0d0d 100%);
+  background-attachment: fixed;
   padding: 18px 56px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }

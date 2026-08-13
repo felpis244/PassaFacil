@@ -23,8 +23,8 @@ if (professor.role !== "professor") {
 
 // Atualiza o menu lateral
 const iniciais = professor.nome.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
-document.getElementById("avatar-mlateral").textContent = iniciais;
-document.getElementById("nome-mlateral").textContent = professor.nome;
+const avatarEl = document.getElementById("avatar-mlateral");
+if (avatarEl) avatarEl.textContent = iniciais;
 
 // Função para carregar questões
 async function carregarQuestoes() {
@@ -69,7 +69,7 @@ document.getElementById("btn-adicionar").addEventListener("click", async () => {
   const dificuldade = document.getElementById("form-dificuldade").value;
 
   if (!enunciado || !alt_a || !alt_b || !alt_c || !alt_d || !explicacao || !conteudo) {
-    alert("Preencha todos os campos!");
+    mostrarToast('Preencha todos os campos!', 'erro');
     return;
   }
 
@@ -86,12 +86,12 @@ document.getElementById("btn-adicionar").addEventListener("click", async () => {
     });
 
   if (error) {
-    alert("Erro ao adicionar: " + error.message);
+    mostrarToast('Erro ao adicionar: ' + error.message, 'erro');
     return;
   }
 
-  alert("Questão adicionada!");
-  
+  mostrarToast('Questão adicionada!', 'sucesso');
+
   // Limpa o formulário
   document.getElementById("form-conteudo").value = "";
   document.getElementById("form-enunciado").value = "";
@@ -111,3 +111,12 @@ window.deletarQuestao = async (id) => {
   await supabase.from("questoes").delete().eq("id", id);
   carregarQuestoes();
 };
+
+// Logout
+const btnLogout = document.getElementById("btn-logout");
+if (btnLogout) {
+  btnLogout.addEventListener("click", async () => {
+    await supabase.auth.signOut();
+    window.location.href = "index.html";
+  });
+}

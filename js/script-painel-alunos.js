@@ -23,8 +23,8 @@ if (professor.role !== "professor") {
 
 // Atualiza o menu lateral
 const iniciais = professor.nome.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
-document.getElementById("avatar-mlateral").textContent = iniciais;
-document.getElementById("nome-mlateral").textContent = professor.nome;
+const avatarEl = document.getElementById("avatar-mlateral");
+if (avatarEl) avatarEl.textContent = iniciais;
 
 // Busca todos os alunos
 const { data: alunos } = await supabase
@@ -58,5 +58,14 @@ if (alunos.length === 0) {
     `;
 
     lista.appendChild(item);
+  });
+}
+
+// Logout
+const btnLogout = document.getElementById("btn-logout");
+if (btnLogout) {
+  btnLogout.addEventListener("click", async () => {
+    await supabase.auth.signOut();
+    window.location.href = "index.html";
   });
 }

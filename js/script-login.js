@@ -1,22 +1,22 @@
 // conexão com o Supabase
 import { supabase } from "./supabase.js";
 
-// Procura o formulário de login
+// procura o formulário de login
 const form = document.getElementById("form-login");
 
-// Espera o usuário clicar em Entrar
+// espera o usuário clicar em entrar
 form.addEventListener("submit", async (e) => {
 
-  // Impede o formulário de recarregar a página
+  // impede o formulário de dar f5 na página
   e.preventDefault();
 
-  // Pega o e-mail digitado
+  // pega o e-mail digitado
   const email = document.getElementById("email").value;
 
-  // Pega a senha digitada
+  // pega a senha digitada
   const senha = document.getElementById("senha").value;
 
-  // Faz login no Supabase
+  // faz login no Supabase
 
   const lembrar = document.getElementById("lembrar").checked;
 
@@ -28,20 +28,20 @@ form.addEventListener("submit", async (e) => {
       }
   });
 
-  // Se der erro, mostra a mensagem e para
+  // se der erro mostra a mensagem e para
     if (error) {
-        mostrarToast("Erro ao entrar:\n" + error.message);
-        return;
+      mostrarToast(' Erro ao entrar, caso persista, entre em contato com o suporte.', 'erro');
+      return;
     }
 
-  // Verifica se o perfil do usuário já existe na tabela
+  // verifica se o perfil do usuário já existe na tabela
   const { data: perfil } = await supabase
     .from("perfis")
     .select("id, ultimo_estudo")
     .eq("id", data.user.id)
     .maybeSingle();
 
-  // Se não existir, cria o perfil automaticamente
+  // se não existir cria o perfil automaticamente
     if (!perfil) {
         await supabase
             .from("perfis")
@@ -68,7 +68,7 @@ form.addEventListener("submit", async (e) => {
     }
   
 
-  // Busca o cargo do usuário
+  // busca o cargo da pessoa
   const { data: perfilRole } = await supabase
     .from("perfis")
     .select("role")
@@ -87,7 +87,7 @@ form.addEventListener("submit", async (e) => {
 
 });
 
-// Login com Google
+// login com Google
 document.getElementById("btn-google").addEventListener("click", async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
@@ -97,6 +97,6 @@ document.getElementById("btn-google").addEventListener("click", async () => {
   });
 
   if (error) {
-    mostrarToast("Erro ao entrar com Google: " + error.message);
+    mostrarToast(' Erro ao entrar com Google, caso persista, entre em contato com o suporte.', 'erro')
   }
 });

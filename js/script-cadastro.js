@@ -11,23 +11,23 @@ form.addEventListener('submit', async (e) => {
 
   // validação do nome
   if (nome.length < 3) {
-    mostrarToast('❌ O nome precisa ter pelo menos 3 caracteres!', 'erro')
+    mostrarToast(' O nome precisa ter pelo menos 3 caracteres!', 'erro')
     return
   }
 
   // validação da senha forte
   if (senha.length < 6) {
-    mostrarToast('❌ A senha precisa ter pelo menos 6 caracteres!', 'erro')
+    mostrarToast(' A senha precisa ter pelo menos 6 caracteres!', 'erro')
     return
   }
   // validação de letra maiuscula
   if (!/[A-Z]/.test(senha)) {
-    mostrarToast('❌ A senha precisa ter pelo menos uma letra maiúscula!', 'erro')
+    mostrarToast(' A senha precisa ter pelo menos uma letra maiúscula!', 'erro')
     return
   }
   //validação de numeros 
   if (!/[0-9]/.test(senha)) {
-    mostrarToast('❌ A senha precisa ter pelo menos um número!', 'erro')
+    mostrarToast(' A senha precisa ter pelo menos um número!', 'erro')
     return
   }
 
@@ -42,13 +42,13 @@ form.addEventListener('submit', async (e) => {
 
   // mensagens se der erro
   if (error) {
-    mostrarToast('❌ Erro ao cadastrar: ' + error.message, 'erro')
+    mostrarToast(' Erro ao cadastrar, caso persista, entre em contato com o suporte.', 'erro')
     return
   }
 
   // sucesso
   //vai um email do supa para a pessoa confirmar se realmente existe o email
-  mostrarToast('✅ Cadastro realizado! Confirme seu email para continuar.', 'sucesso')
+  mostrarToast(' Cadastro realizado! Confirme seu email para continuar.', 'sucesso')
   setTimeout(() => {
     window.location.href = 'login.html'
   }, 2000)
@@ -64,6 +64,7 @@ document.getElementById("btn-google").addEventListener("click", async () => {
   });
 
   if (error) {
-    mostrarToast('❌ Erro ao cadastrar com Google: ' + error.message, 'erro')
+    mostrarToast(' Erro ao cadastrar com Google, caso persista, entre em contato com o suporte.', 'erro')
   }
 });
+

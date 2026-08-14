@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PassaFácil — Perfil</title>
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="css/perfil.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassaFácil — Perfil</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/toast.css">
 </head>
 
 <body>
@@ -17,8 +18,8 @@
             </a>
         </nav>
   </header>
-
-  <main class="dashboard-main">
+    <!-- menu lateral -->
+    <main class="dashboard-main">
 
         <aside class="mlateral">
             <div class="avatar grande" id="avatar-sidebar"></div>
@@ -34,6 +35,7 @@
             </nav>
         </aside>
 
+        <!-- perfil -->
         <div class="dashboard-conteudo">
 
             <div class="perfil-topo">
@@ -41,6 +43,7 @@
                 <div>
                     <h1 id="perfil-nome"></h1>
                     <p id="perfil-email"></p>
+                    <p id="perfil-bio" class="perfil-bio"></p>
                 </div>
             </div>
         
@@ -61,11 +64,60 @@
                 </div>
             </div>
 
+            <!-- editar perfil -->
+            
+            <div class="perfil-editar">
+                <h2 class="perfil-editar-titulo">Editar perfil</h2>
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" id="edit-nome" placeholder="Seu nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label>Bio</label>
+                    <textarea id="edit-bio" placeholder="Fale um pouco sobre você..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Cor do avatar</label>
+                    <div class="cores-avatar">
+                        <div class="cor-opcao" style="background:#4c2a96;" data-cor="#4c2a96"></div>
+                        <div class="cor-opcao" style="background:#1D9E75;" data-cor="#1D9E75"></div>
+                        <div class="cor-opcao" style="background:#ff4d6a;" data-cor="#ff4d6a"></div>
+                        <div class="cor-opcao" style="background:#FFD700;" data-cor="#FFD700"></div>
+                        <div class="cor-opcao" style="background:#3b82f6;" data-cor="#3b82f6"></div>
+                        <div class="cor-opcao" style="background:#f97316;" data-cor="#f97316"></div>
+                    </div>
+                </div>
+
+                <button id="btn-salvar-perfil" class="btn-comecar">Salvar alterações</button>
+                </div>
+
+            <!-- mudar senha -->
+            <div class="perfil-editar">
+                <h2 class="perfil-editar-titulo">Alterar senha</h2>
+
+                <div class="form-group">
+                    <label>Nova senha</label>
+                    <input type="password" id="nova-senha" placeholder="••••••••">
+                    <small class="senha-dica">Mínimo 6 caracteres, uma maiúscula e um número</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirmar nova senha</label>
+                    <input type="password" id="confirmar-senha" placeholder="••••••••">
+                </div>
+
+                <button id="btn-alterar-senha" class="btn-comecar">Alterar senha</button>
+            </div>
+
         </div>
 
     </main>
 
-  <script type="module" src="js/script-perfil.js"></script>
+    <script src="js/toast.js"></script>
+    <script type="module" src="js/script-perfil.js"></script>
 
 </body>
 </html>

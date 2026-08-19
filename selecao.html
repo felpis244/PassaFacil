@@ -60,6 +60,15 @@
     </main>
 
   <script>
+
+    // Verifica se o usuário está logado
+    const { data } = await supabase.auth.getSession();
+
+    // Se não tiver login volta pra tela de logar
+    if (!data.session) {
+      window.location.href = "login.html";
+    }
+    
     function escolher(materia) {
       localStorage.setItem('materiaSelecionada', materia);
       window.location.href = 'questao.html';

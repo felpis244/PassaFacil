@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/confirmar.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="dashboard.html" class="logo-link">
+        <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+      </a>
+      <button class="menu-hamburguer" id="menu-hamburguer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="perfil.html">
+        <div class="avatar" id="avatar-header"></div>
+      </a>
+    </nav>
+  </header>
+
+  <!-- menu para celular. -->
+  <div class="menu-mobile" id="menu-mobile">
+    <div class="menu-mobile-conteudo">
+      <div class="avatar grande" id="avatar-mobile"></div>
+      <p class="menu-mobile-nome" id="nome-mobile"></p>
+      <nav class="menu-mobile-nav">
+        <a href="dashboard.html" class="menu-mobile-link ativo">🏠 Início</a>
+        <a href="perfil.html" class="menu-mobile-link">👤 Perfil</a>
+        <a href="ranking.html" class="menu-mobile-link">🏆 Ranking</a>
+        <a href="#" class="menu-mobile-link sair" id="btn-logout-mobile">🚪 Sair</a>
+      </nav>
+    </div>
+    <div class="menu-mobile-overlay" id="menu-overlay"></div>
+  </div>
+
+  <main class="dashboard-main">
+
+    <aside class="mlateral">
+      <div class="avatar grande" id="avatar-mlateral"></div>
+      <nav class="mlateral-nav">
+        <a href="dashboard.html" class="mlateral-link ativo" title="Início">🏠 <span>Início</span></a>
+        <a href="perfil.html" class="mlateral-link" title="Perfil">👤 <span>Perfil</span></a>
+        <a href="ranking.html" class="mlateral-link" title="Ranking">🏆 <span>Ranking</span></a>
+        <a href="#" class="mlateral-link sair" id="btn-logout" title="Sair">🚪 <span>Sair</span></a>
+      </nav>
+    </aside>
+
+    <div class="dashboard-conteudo">
+
+      <div class="db-header">
+        <div>
+          <h1 class="db-greeting">Olá, <span id="nome-usuario">...</span> 👋</h1>
+          <p class="db-sub">Continue de onde parou</p>
+        </div>
+      </div>
+
+      <!-- STATUS -->
+      <section class="resumo">
+        <div class="resumo-card amarelo">
+          <p>XP Total</p>
+          <h2 id="stat-xp">0</h2>
+        </div>
+        <div class="resumo-card vermelho">
+          <p>Vidas</p>
+          <h2 id="stat-vidas">5</h2>
+          <p class="vidas-contador" id="vidas-contador"></p>
+          <button class="btn-regenerar-vidas" id="btn-regenerar-vidas" title="Recupera as 5 vidas na hora">
+            ⚡ Regenerar vidas
+          </button>
+        </div>
+        <div class="resumo-card verde">
+          <p>Sequência</p>
+          <h2 id="stat-sequencia">0d</h2>
+        </div>
+        <div class="resumo-card roxo">
+          <p>Ranking</p>
+          <h2 id="stat-ranking">#-</h2>
+        </div>
+      </section>
+
+      <!-- CORPO (NOSSO ACESSO RAPIDO)  -->
+      <div class="rapido-body">
+
+        <div class="rapido-card">
+          <p class="rapido-card-titulo">Últimas lições</p>
+          <div id="historico-lista">
+            <p class="sem-dados">Nenhuma lição feita ainda.</p>
+          </div>
+        </div>
+
+        <div class="rapido-card">
+          <p class="rapido-card-titulo">Acesso rápido</p>
+          <div class="rapido-lista">
+            <a href="selecao.html" class="rapido-item destaque">
+              <div class="rapido-icon">📖</div>
+              <div>
+                <div class="rapido-nome">Começar lição</div>
+                <div class="rapido-sub">Escolha a matéria</div>
+              </div>
+              <span class="rapido-seta">→</span>
+            </a>
+            <a href="chatbot.html" class="rapido-item">
+              <div class="rapido-icon">💬</div>
+              <div>
+                <div class="rapido-nome">Tirar dúvidas</div>
+                <div class="rapido-sub">Fale com nossa IA</div>
+              </div>
+              <span class="rapido-seta">→</span>
+            </a>
+            <a href="ranking.html" class="rapido-item">
+              <div class="rapido-icon">🏆</div>
+              <div>
+                <div class="rapido-nome">Ver ranking</div>
+                <div class="rapido-sub" id="rapido-ranking">Veja sua posição</div>
+              </div>
+              <span class="rapido-seta">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Cards de info  -->
+      <section class="info-cards">
+        <div class="info-card">
+          <p class="info-label">Próxima lição</p>
+          <h3>Escolha uma matéria</h3>
+          <p class="info-sub">Módulo 1</p>
+          <a href="selecao.html" class="btn-comecar">Começar</a>
+        </div>
+        <div class="info-card">
+          <p class="info-label">Melhor matéria</p>
+          <h3 id="melhor-materia">Nenhuma ainda</h3>
+          <p class="info-sub verde-texto" id="melhor-taxa"></p>
+        </div>
+        <div class="info-card">
+          <p class="info-label">Dúvidas?</p>
+          <h3>Consulte nossa FAC</h3>
+          <p class="info-sub">Tire suas dúvidas de português</p>
+          <a href="chatbot.html" class="btn-comecar">Conversar</a>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <script src="js/confirmar.js"></script>
+  <script type="module" src="js/script-dashboard.js"></script>
+
+</body>
+</html>

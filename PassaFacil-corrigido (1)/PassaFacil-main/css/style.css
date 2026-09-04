@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* corpo dio site */
+body {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0b3b 50%, #0d0d0d 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* parte de cima */
+header {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0b3b 50%, #0d0d0d 100%);
+  background-attachment: fixed;
+  padding: 18px 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 170px;
+  filter: brightness(0) invert(1);
+}
+/* parte principal com o texto */
+.principal {
+  padding: 96px 56px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+/*titulo*/
+.principal h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.principal span {
+  color: #AFA9EC;
+}
+
+.principal p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 40px;
+  max-width: 460px;
+}
+
+.principal-botoes {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primario {
+  padding: 15px 30px;
+  background-color: #4c2a96;
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.btn-secundario {
+  padding: 15px 30px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.estatistica {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.estatistica-item {
+  flex: 1;
+  text-align: center;
+  padding: 32px 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.estatistica-item h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #AFA9EC;
+  margin-bottom: 6px;
+}
+
+.estatistica-item p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.materias {
+  padding: 80px 56px;
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.conteudo {
+  font-size: 11px;
+  font-weight: 500;
+  color: #AFA9EC;
+  margin-bottom: 12px;
+}
+
+.materias h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 48px;
+}
+
+.materias-posicao {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.materias-card {
+  background-color: rgba(76, 42, 150, 0.2);
+  border: 1px solid rgba(175, 169, 236, 0.2);
+  border-radius: 16px;
+  padding: 24px 16px;
+  flex: 1;
+  max-width: 200px;
+}
+
+.materias-card span {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.materias-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.materias-card p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.funcionalidades {
+  padding: 80px 56px;
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.secao-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #AFA9EC;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.funcionalidades h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 48px;
+}
+
+.funcionalidades-posicao {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.funcionalidade-card {
+  background-color: rgba(76, 42, 150, 0.15);
+  border: 1px solid rgba(175, 169, 236, 0.15);
+  border-radius: 18px;
+  padding: 28px;
+  text-align: left;
+}
+
+.funcionalidade-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.funcionalidade-card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 28px 56px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+}
+

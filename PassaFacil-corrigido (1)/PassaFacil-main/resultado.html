@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Resultado</title>
+  <link rel="stylesheet" href="css/resultado.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="dashboard.html" class="logo-link">
+      <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+    </a>
+  </header>
+
+  <main class="resultado-main">
+
+        <div class="resultado-topo">
+            <h1>Lição concluída! 🎉</h1>
+            <p id="resultado-materia"></p>
+        </div>
+
+        <div class="resultado-status">
+            <div class="status-card acertos">
+                <h2 id="acertos">0</h2>
+                <p>Acertos</p>
+            </div>
+            <div class="status-card erros">
+                <h2 id="erros">0</h2>
+                <p>Erros</p>
+            </div>
+            <div class="status-card xp">
+                <h2 id="xp-ganho">0 XP</h2>
+                <p>XP Ganho</p>
+            </div>
+            <div class="status-card taxa">
+                <h2 id="taxa">0%</h2>
+                <p>Taxa de acerto</p>
+            </div>
+        </div>
+    
+
+        <div class="gabarito">
+            <h2>Gabarito</h2>
+            <div id="gabarito-lista"></div>
+        </div>
+
+        <a href="dashboard.html" class="btn-voltar">Voltar para o início</a>
+
+    </main>
+
+  <script src="js/script-resultado.js"></script>
+
+</body>
+</html>

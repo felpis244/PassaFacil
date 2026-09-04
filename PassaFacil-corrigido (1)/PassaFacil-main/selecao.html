@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassaFácil — Escolha a Matéria</title>
+    <link rel="stylesheet" href="css/selecao.css">
+</head>
+
+<body>
+
+  <header>
+        <a href="dashboard.html" class="logo-link">
+            <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+        </a>
+        <a href="dashboard.html" class="btn-voltar">← Voltar</a>
+  </header>
+
+    <main class="selecao-main">
+
+        <div class="selecao-titulo">
+            <h1>Escolha a matéria</h1>
+            <p>Selecione o conteúdo que deseja praticar hoje</p>
+        </div>
+
+        <div class="materias-selecao">
+
+            <div class="materia-card" onclick="escolher('Interpretação de Texto')">
+                <span class="materia-emoji">📖</span>
+                <h2>Interpretação de Texto</h2>
+                <p>40 questões</p>
+            </div>
+
+            <div class="materia-card" onclick="escolher('Gramática')">
+                <span class="materia-emoji">✏️</span>
+                <h2>Gramática</h2>
+                <p>50 questões</p>
+            </div>
+
+            <div class="materia-card" onclick="escolher('Literatura')">
+                <span class="materia-emoji">📚</span>
+                <h2>Literatura</h2>
+                <p>40 questões</p>
+            </div>
+
+            <div class="materia-card" onclick="escolher('Redação')">
+                <span class="materia-emoji">📝</span>
+                <h2>Redação</h2>
+                <p>35 questões</p>
+            </div>
+
+            <div class="materia-card" onclick="escolher('Figuras de Linguagem')">
+                <span class="materia-emoji">💬</span>
+                <h2>Figuras de Linguagem</h2>
+                <p>35 questões</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="js/selecao.js"></script>
+
+</body>
+</html>

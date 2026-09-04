@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassaFácil — Página não encontrada</title>
+    <link rel="stylesheet" href="css/404.css" />
+    <script>
+        // Se a página não carregar, vai para o 404
+        window.addEventListener('error', () => {
+            window.location.href = '404.html';
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+        </a>
+    </header>
+
+    <div class="numero">404</div>
+    <h2>Página não encontrada</h2>
+    <p>A página que você procura não existe ou foi movida.</p>
+    <a href="index.html" class="btn-voltar">← Voltar para o início</a>
+
+    <footer>
+        <p>© 2026 PassaFácil — Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

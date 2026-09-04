@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a0b3b;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 16px 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-img {
+  width: 140px;
+  filter: brightness(0) invert(1);
+}
+
+.resultado-main {
+  max-width: 760px;
+  margin: 48px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.resultado-topo {
+  text-align: center;
+}
+
+.resultado-topo h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.resultado-topo p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.resultado-status {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.status-card {
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.status-card h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.status-card p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status-card.acertos {
+  background-color: rgba(29, 158, 117, 0.1);
+  border-color: rgba(29, 158, 117, 0.2);
+}
+
+.stat-card.acertos h2 { color: #1D9E75; }
+
+.stat-card.erros {
+  background-color: rgba(255, 77, 106, 0.1);
+  border-color: rgba(255, 77, 106, 0.2);
+}
+
+.stat-card.erros h2 { color: #ff4d6a; }
+
+.stat-card.xp {
+  background-color: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.2);
+}
+
+.stat-card.xp h2 { color: #FFD700; }
+
+.stat-card.taxa {
+  background-color: rgba(76, 42, 150, 0.3);
+  border-color: rgba(175, 169, 236, 0.2);
+}
+
+.stat-card.taxa h2 { color: #AFA9EC; }
+
+.gabarito {
+  background-color: rgba(76, 42, 150, 0.15);
+  border: 1px solid rgba(175, 169, 236, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.gabarito h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #AFA9EC;
+}
+
+.gabarito-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gabarito-item:last-child {
+  border-bottom: none;
+}
+
+.gabarito-icone {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gabarito-texto {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.btn-voltar {
+  display: block;
+  text-align: center;
+  padding: 15px 30px;
+  background-color: #4c2a96;
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-voltar:hover {
+  background-color: #5e35b1;
+}

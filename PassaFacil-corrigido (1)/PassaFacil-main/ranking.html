@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Ranking</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/ranking.css">
+  <link rel="stylesheet" href="css/confirmar.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="dashboard.html" class="logo-link">
+                <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+            </a>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+
+        <aside class="mlateral">
+            <div class="avatar grande" id="avatar-mlateral"></div>
+            <nav class="mlateral-nav">
+                <a href="dashboard.html" class="mlateral-link">🏠 <span>Início</span></a>
+                <a href="perfil.html" class="mlateral-link">👤 <span>Perfil</span></a>
+                <a href="ranking.html" class="mlateral-link ativo">🏆 <span>Ranking</span></a>
+                <a href="index.html" class="mlateral-link" id="logout-btn">
+                    🚪 <span>Sair</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="dashboard-conteudo">
+
+            <div class="ranking-topo">
+                <h1>🏆 Ranking</h1>
+                <p>Os alunos com mais XP</p>
+            </div>
+
+            <div class="ranking-lista" id="ranking-lista"></div>
+
+            <div class="ranking-voce" id="ranking-voce"></div>
+
+        </div>
+
+    </main>
+
+    <script src="js/confirmar.js"></script>
+    <script type="module" src="js/script-ranking.js"></script>
+
+</body>
+</html>

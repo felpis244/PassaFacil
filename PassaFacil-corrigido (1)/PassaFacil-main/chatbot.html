@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassaFácil — Tire suas dúvidas</title>
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="dashboard.html" class="logo-link">
+      <img src="assets/img/passafacil-removebg-preview.png" alt="PassaFácil" class="logo-img">
+    </a>
+    <a href="dashboard.html" class="btn-voltar">← Voltar</a>
+  </header>
+
+  <main class="chatbot-main">
+
+    <div class="chatbot-titulo">
+      <h1>💬 Tire suas dúvidas</h1>
+      <p>Digite uma dúvida de português e nossa IA te responde!</p>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-box" id="chat-box">
+        <div class="mensagem bot">
+          Olá! Sou o assistente do PassaFácil 👋 Me pergunte sobre gramática, interpretação de texto, literatura, redação ou figuras de linguagem!
+        </div>
+      </div>
+      <div class="input-area">
+        <input type="text" id="user-input" placeholder="Digite sua dúvida..." />
+        <button id="send-btn">Enviar</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/script-chatbot.js"></script>
+
+</body>
+</html>

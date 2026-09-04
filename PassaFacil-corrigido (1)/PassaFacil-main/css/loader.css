@@ -1,0 +1,69 @@
+/* overlay de carregamento */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.75);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.loader-overlay.ativo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.loader-caixa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loader-spinner {
+  width: 52px;
+  height: 52px;
+  border: 5px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #7e5bef;
+  border-radius: 50%;
+  animation: loader-girar 0.8s linear infinite;
+}
+
+.loader-texto {
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+@keyframes loader-girar {
+  to { transform: rotate(360deg); }
+}
+
+/* estado de carregamento aplicado direto num botão */
+.btn-carregando {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn-carregando::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: loader-girar 0.7s linear infinite;
+}

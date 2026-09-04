@@ -1,0 +1,80 @@
+/* fundo escuro por trás da caixa de confirmação */
+.confirmar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.confirmar-overlay.ativo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.confirmar-caixa {
+  background: #1a0b3b;
+  border: 1px solid rgba(175, 169, 236, 0.25);
+  border-radius: 14px;
+  padding: 24px;
+  width: 90%;
+  max-width: 340px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(10px);
+  transition: transform 0.2s ease;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.confirmar-overlay.ativo .confirmar-caixa {
+  transform: translateY(0);
+}
+
+.confirmar-mensagem {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.confirmar-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.confirmar-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.confirmar-btn.cancelar {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.confirmar-btn.cancelar:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.confirmar-btn.confirmar {
+  background: #ff4d6a;
+  color: #ffffff;
+}
+
+.confirmar-btn.confirmar:hover {
+  background: #ff2c4d;
+}

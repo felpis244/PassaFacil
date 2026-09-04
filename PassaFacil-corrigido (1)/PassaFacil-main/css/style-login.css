@@ -1,0 +1,201 @@
+/* zerando tudo  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0b3b 50%, #0d0d0d 100%);
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+/* deixando a logo no lugar certo*/
+.header-login {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 60px;
+  z-index: 100;
+}
+
+/* Logo */
+.logo-img {
+  height: 50px;
+  filter: brightness(0) invert(1);
+  transition: 0.3s;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+/* caixa do formularip */
+.login-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* passafácil do formulario*/
+.logo-form{
+  height: 65px;
+  filter: brightness(0) invert(1);
+  transition: 0.3s;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #d1c4e9;
+}
+
+/* input bonito */
+.input-group input, 
+.input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff; /* antes: rgba(102,100,100,0.83) — cinza escuro, difícil de ler no fundo escuro */
+  outline: none;
+  transition: 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+/* placeholder (texto de exemplo antes de digitar) continua discreto, só o texto DIGITADO fica branco */
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: #6c4bd8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-login:hover {
+  background: #7e5bef;
+  transform: translateY(-2px);
+}
+
+.footer-text {
+  margin-top: 25px;
+}
+
+.footer-text a {
+  color: #6c4bd8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+
+}
+.lembrar-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.lembrar-label input {
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #4c2a96;
+}
+
+.lembrar-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* google */
+.separador {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.separador::before,
+.separador::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.separador span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-google {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  color: #1a0b3b;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.btn-google:hover {
+  background-color: #f0f0f0;
+}

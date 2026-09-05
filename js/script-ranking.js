@@ -13,19 +13,22 @@ const userId = data.session.user.id;
 // Busca o perfil do usuário logado
 const { data: meuPerfil } = await supabase
   .from("perfis")
-  .select("nome, xp")
+  .select("nome, xp, avatar_cor")
   .eq("id", userId)
   .single();
 
 // Atualiza a sidebar
 const iniciais = meuPerfil.nome.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
-document.getElementById("avatar-mlateral").textContent = iniciais;
+const avatarMlateral = document.getElementById("avatar-mlateral");
+avatarMlateral.textContent = iniciais;
+// aplica a cor escolhida no perfil (antes essa cor só aparecia na própria página de perfil)
+avatarMlateral.style.backgroundColor = meuPerfil.avatar_cor || "#4c2a96";
 
 
 // Busca todos os perfis fazendo ranking por XP
 const { data: perfis } = await supabase
   .from("perfis")
-  .select("nome, xp")
+  .select("nome, xp, avatar_cor")
   .order("xp", { ascending: false })
   .limit(20);
 
@@ -52,9 +55,11 @@ perfis.forEach((perfil, index) => {
   item.classList.add("ranking-item");
   if (ehVoce) item.classList.add("destaque");
 
+  const corAvatar = perfil.avatar_cor || "#4c2a96";
+
   item.innerHTML = `
     <span class="ranking-posicao ${classePos}">${medalha}</span>
-    <div class="ranking-avatar">${iniciais}</div>
+    <div class="ranking-avatar" style="background-color: ${corAvatar}">${iniciais}</div>
     <span class="ranking-nome">${perfil.nome} ${ehVoce ? "<strong>(você)</strong>" : ""}</span>
     <span class="ranking-xp">${perfil.xp} XP</span>
   `;
@@ -67,13 +72,18 @@ perfis.forEach((perfil, index) => {
 const rankingVoce = document.getElementById("ranking-voce");
 rankingVoce.innerHTML = `
   <span class="ranking-posicao">#${minhaPosicao}</span>
-  <div class="ranking-avatar">${iniciais}</div>
+  <div class="ranking-avatar" style="background-color: ${meuPerfil.avatar_cor || "#4c2a96"}">${iniciais}</div>
   <span class="ranking-nome">Sua posição no rank</span>
   <span class="ranking-xp">${meuPerfil.xp} XP</span>
 `;
 
 //logout 
-document.getElementById("logout-btn").addEventListener("click", async () => {
+document.getElementById("logout-btn").addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  const confirmou = await confirmarAcao("Tem certeza que deseja sair da sua conta?");
+  if (!confirmou) return;
+
   await supabase.auth.signOut();
   window.location.href = "login.html";
 });

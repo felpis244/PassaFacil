@@ -20,6 +20,9 @@ form.addEventListener("submit", async (e) => {
 
   const lembrar = document.getElementById("lembrar").checked;
 
+  // mostra a tela de carregamento enquanto verifica o login
+  mostrarLoading("Entrando...");
+
   const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: senha,
@@ -30,6 +33,7 @@ form.addEventListener("submit", async (e) => {
 
   // se der erro mostra a mensagem e para
     if (error) {
+      esconderLoading();
       mostrarToast(' Erro ao entrar, caso persista, entre em contato com o suporte.', 'erro');
       return;
     }
@@ -54,19 +58,12 @@ form.addEventListener("submit", async (e) => {
             });
     }
     
-    //verificação de resetar vidas todo dia quando a pessao entrar reseta pra 5 corações dnv
-    
-    if (perfil) {
-      const hoje = new Date().toISOString().split("T")[0];
-
-      if (perfil.ultimo_estudo !== hoje) {
-        await supabase
-          .from("perfis")
-          .update({ vidas: 5 })
-          .eq("id", data.user.id);
-      }
-    }
-  
+    // ANTES: aqui resetava as vidas pra 5 toda vez que passava um dia.
+    // Isso foi REMOVIDO porque agora as vidas regeneram sozinhas a cada
+    // 5 minutos (ver js/vidas.js), então não faz mais sentido depender
+    // de "virou o dia" — o cálculo de regeneração já cuida disso
+    // automaticamente sempre que o dashboard, o perfil ou a tela de
+    // questões são abertos.
 
   // busca o cargo da pessoa
   const { data: perfilRole } = await supabase
@@ -89,14 +86,20 @@ form.addEventListener("submit", async (e) => {
 
 // login com Google
 document.getElementById("btn-google").addEventListener("click", async () => {
+  mostrarLoading("Conectando com o Google...");
+
+  // monta a URL de destino com base na pasta atual (funciona em subpastas e em produção)
+  const urlDashboard = new URL("dashboard.html", window.location.href).href;
+
   const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: window.location.origin + "/dashboard.html"
+      redirectTo: urlDashboard
     }
   });
 
   if (error) {
+    esconderLoading();
     mostrarToast(' Erro ao entrar com Google, caso persista, entre em contato com o suporte.', 'erro')
   }
 });

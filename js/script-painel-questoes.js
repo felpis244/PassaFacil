@@ -116,6 +116,10 @@ window.deletarQuestao = async (id) => {
 const btnLogout = document.getElementById("btn-logout");
 if (btnLogout) {
   btnLogout.addEventListener("click", async () => {
+    // pede confirmação antes de encerrar a sessão do professor
+    const confirmou = await confirmarAcao("Tem certeza que deseja sair da sua conta?");
+    if (!confirmou) return;
+
     await supabase.auth.signOut();
     window.location.href = "index.html";
   });

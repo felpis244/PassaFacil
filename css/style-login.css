@@ -93,10 +93,15 @@ p {
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.2);
-  color: rgba(102, 100, 100, 0.829);
+  color: #ffffff; /* antes: rgba(102,100,100,0.83) — cinza escuro, difícil de ler no fundo escuro */
   outline: none;
   transition: 0.3s;
   font-family: 'Inter', sans-serif;
+}
+
+/* placeholder (texto de exemplo antes de digitar) continua discreto, só o texto DIGITADO fica branco */
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .btn-login {

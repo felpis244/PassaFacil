@@ -62,6 +62,17 @@ const respostas = {
   "tchau": "Tchau! Bons estudos e boa sorte no ENEM! 🚀"
 };
 
+// tira os acentos de um texto, pra poder comparar palavras
+// mesmo que o usuário digite sem acentuação (ex: "concordancia" vs "concordância")
+//
+// como funciona: o .normalize("NFD") separa a letra do acento
+// (ex: "â" vira "a" + um caractere invisível de acento "^")
+// e o replace() com essa regex remove só esses acentos separados,
+// deixando a letra base sozinha.
+function removerAcentos(texto) {
+  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
@@ -95,10 +106,16 @@ function adicionarMensagem(texto, tipo) {
 }
 
 function buscarResposta(mensagem) {
+  // remove os acentos da mensagem do usuário uma única vez
+  const mensagemSemAcento = removerAcentos(mensagem);
+
   for (const chave in respostas) {
-    if (mensagem.includes(chave)) {
+    // remove os acentos da palavra-chave também, pra comparar "igual com igual"
+    const chaveSemAcento = removerAcentos(chave);
+
+    if (mensagemSemAcento.includes(chaveSemAcento)) {
       return respostas[chave];
     }
   }
-  return "Hmm, não encontrei essa dúvida. Tente perguntar sobre: gramática, crase, concordância, metáfora, ironía, interpretação de texto, modernismo, redação, entre outros! 📚";
+  return "Hmm, não encontrei essa dúvida. Tente perguntar sobre: gramática, crase, concordância, metáfora, ironia, interpretação de texto, modernismo, redação, entre outros! 📚";
 }

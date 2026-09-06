@@ -64,9 +64,9 @@ nav {
 
 /* MENU LATERAL */
 .mlateral {
-  width: 64px;
+  width: 200px; /* antes: 64px (só ícone). agora cabe o texto ao lado */
   flex-shrink: 0;
-  padding: 24px 0;
+  padding: 24px 12px;
   border-right: 0.5px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
@@ -78,20 +78,30 @@ nav {
   flex-direction: column;
   gap: 4px;
   width: 100%;
-  align-items: center;
+  align-items: stretch; /* antes: center. os links agora ocupam a largura toda */
 }
 
 .mlateral-link {
-  width: 42px;
-  height: 42px;
+  width: 100%;
+  height: 44px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* ícone e texto alinhados à esquerda */
+  gap: 12px;
+  padding: 0 14px;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.35);
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
+}
+
+/* o texto ao lado do ícone (antes era um <span> vazio) */
+.mlateral-link span {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', Arial, sans-serif;
+  white-space: nowrap;
 }
 
 .mlateral-link:hover {
@@ -166,6 +176,41 @@ nav {
 .resumo-card.roxo { background-color: rgba(76, 42, 150, 0.15); border-color: rgba(175, 169, 236, 0.12); }
 .resumo-card.roxo h2 { color: #AFA9EC; }
 
+/* contador de tempo pra próxima vida regenerar */
+.vidas-contador {
+  font-size: 11px !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  margin-top: 4px !important;
+  margin-bottom: 0 !important;
+}
+
+/* botão de regenerar todas as vidas na hora */
+.btn-regenerar-vidas {
+  margin-top: 10px;
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 77, 106, 0.3);
+  background: rgba(255, 77, 106, 0.1);
+  color: #ff4d6a;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.btn-regenerar-vidas:hover {
+  background: rgba(255, 77, 106, 0.2);
+}
+
+.btn-regenerar-vidas:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 /* CORPO */
 .rapido-body {
   display: grid;
@@ -178,6 +223,44 @@ nav {
   border: 0.5px solid rgba(255, 255, 255, 0.07);
   border-radius: 14px;
   padding: 18px;
+}
+
+/* gráfico de barras das últimas lições feitas */
+.grafico-licoes {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 130px;
+  padding-top: 12px;
+}
+
+.grafico-barra-coluna {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+}
+
+.grafico-barra {
+  width: 100%;
+  max-width: 26px;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, #7e5bef, #4c2a96);
+  min-height: 4px;
+  transition: height 0.4s ease, background 0.2s;
+}
+
+.grafico-barra-coluna:hover .grafico-barra {
+  background: linear-gradient(180deg, #9b7ff5, #6c4bd8);
+}
+
+.grafico-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .rapido-card-titulo {
@@ -335,12 +418,11 @@ nav {
   }
 
   .mlateral {
-    width: 48px;
+    width: 160px;
   }
 
   .mlateral-link {
-    width: 36px;
-    height: 36px;
+    height: 40px;
     font-size: 16px;
   }
 

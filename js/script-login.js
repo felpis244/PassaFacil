@@ -84,6 +84,27 @@ form.addEventListener("submit", async (e) => {
 
 });
 
+document.getElementById("esqueci-senha").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  
+  if (!email) {
+    mostrarToast(" Digite seu email primeiro!", "erro");
+    return;
+  }
+
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: window.location.origin + "/perfil.html"
+  });
+
+  if (error) {
+    mostrarToast(" Erro: " + error.message, "erro");
+    return;
+  }
+
+  mostrarToast(" Email de redefinição enviado!", "sucesso");
+});
+
 // login com Google
 document.getElementById("btn-google").addEventListener("click", async () => {
   mostrarLoading("Conectando com o Google...");

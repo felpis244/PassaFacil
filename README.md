@@ -41,3 +41,39 @@ Não é necessário instalar nada. Basta abrir o link abaixo no navegador:
 **https://passa-facil-alpha.vercel.app/**
 
 Em seguida, crie uma conta na tela de cadastro (ou faça login, se já tiver uma) e escolha uma matéria para começar a resolver questões.
+
+## Termos de Uso e Compartilhamento
+
+**Autores:** Otávio Cardozo Alexandre, Igor Rocha Silva, Lucca Ribeiro Santos, Felipe Paschoal Koizumi
+**Orientador(a):** Mateus Amendola Redivo
+**Projeto:** PassaFácil, TCC informática, Colégio Técnico Bento Quirino 
+
+© 2026; Otávio Cardozo Alexandre, Igor Rocha Silva, Lucca Ribeiro Santos, Felipe Paschoal Koizumi. Todos os direitos reservados,
+exceto o que está expressamente permitido abaixo.
+
+### Permitido
+- Consultar e estudar o código para fins educacionais.
+- Uso para avaliação do TCC e apresentação acadêmica.
+- Uso não comercial por terceiros, desde que respeitadas
+  as condições de crédito abaixo.
+
+### Condições
+1. **Crédito obrigatório:** qualquer uso, cópia, adaptação ou
+   divulgação deve citar os autores pelo nome e incluir
+   link para este repositório.
+2. **Sem fins lucrativos:** é proibido usar, vender, licenciar
+   ou oferecer este código (ou derivados) como produto ou
+   serviço comercial sem contratar os autores previamente.
+3. **Uso institucional:** o uso pela instituição de ensino
+   além da avaliação do TCC (outros projetos, sistemas
+   internos, divulgação) depende de autorização prévia e
+   por escrito dos autores.
+4. **Derivados:** trabalhos derivados devem manter este aviso
+   e indicar o que foi alterado.
+
+### Contato
+Para solicitar autorização ou contratar os autores:
+otavio22alexandre@gmail.com / LinkedIn: https://www.linkedin.com/in/igor-rocha-silva-494b36311?utm_source=share_via&utm_content=profile&utm_medium=member_android/ github: @kktavii, @felpis244
+
+### Isenção de garantia
+O software é fornecido "como está", sem garantias de qualquer tipo.
